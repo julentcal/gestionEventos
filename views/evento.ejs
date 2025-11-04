@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario evento</title>
+</head>
+<body>
+    <form action="/evento" method="POST">
+        <label>Nombre del evento:
+            <input type="text" name="nombre" value="<%= nombre || '' %>" required/>
+        </label>
+        <p> </p>
+        <label>Fecha del evento:
+            <input type="date" name="fecha" value="<%= fecha || '' %>" required/>
+        </label>
+        <p> </p>
+        <label>Ciudad del evento:
+            <select name="ciudad" required>
+            <option value="">Seleccione una ciudad</option>
+            <option value="Cordoba" <%= ciudad === 'Cordoba' ? 'selected' : '' %> > Córdoba</option>
+            <option value="Malaga" <%= ciudad === 'Malaga' ? 'selected' : '' %> > Málaga</option>
+            <option value="Cadiz" <%= ciudad === 'Cadiz' ? 'selected' : '' %> > Cádiz</option>
+            </select>
+        </label>
+        <p> </p>       
+        <label>Tipo de evento:
+            <input type="radio" name="tipo" value="presencial" <%= tipo === 'presencial' ? 'checked' : '' %> required/> Presencial
+            <input type="radio" name="tipo" value="online" <%= tipo === 'online' ? 'checked' : '' %> required/> Online
+        </label>
+        <p> </p>
+        <fieldset>
+        <label>Intereses
+            <input type="checkbox" name="intereses" value="musica"
+            <%= (intereses || []).includes('musica') ? 'checked' : '' %> /> Música
+            <input type="checkbox" name="intereses" value="deporte")
+            <%= (intereses || []).includes('deporte') ? 'checked' : '' %> /> Deporte
+            <input type="checkbox" name="intereses" value="tecnologia"
+            <%= (intereses || []).includes('tecnologia') ? 'checked' : '' %> /> Tecnología
+            <input type="checkbox" name="intereses" value="arte"
+            <%= (intereses || []).includes('arte') ? 'checked' : '' %> /> Arte
+        </label>
+        </fieldset>
+        <p> </p>
+
+        <button type="submit">Enviar</button>
+
+        <p><a href="/">Volver al inicio</a></p>
+
+    </form>
+</body>
+</html>
