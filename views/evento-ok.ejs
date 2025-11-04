@@ -19,16 +19,15 @@
         <p>¡Recuerda llegar con antelación a la sede</p>
     <% } else { %>
         <p>Te evento se realizará virtualmente</p>
-
-
     <% } %>
+
+
     <h2>Intereses seleccionados:</h2>
     <ul>
         <% (intereses && intereses.length) { %>
-            <% intereses.forEach(i =>{} %>
+            <% intereses.forEach(i => %>
                 <li><%= i %></li>
-            <% }); %>
-
+            <% ); %>
         <% } else { %>
             <li>No se seleccionaron intereses.</li>
         <% } %>
