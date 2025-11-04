@@ -49,7 +49,7 @@ app.post("/evento", (req, res) => {
         .status(400)
         .render("evento", {nombre, fecha, ciudad, tipo, intereses, errores });}
 
-    res.render("evento", {
+    res.render("evento-ok", {
         nombre,
         fecha,
         ciudad,
