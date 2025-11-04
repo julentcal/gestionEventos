@@ -7,6 +7,24 @@
 </head>
 <body>
     <form action="/evento" method="POST">
+
+                <%  if (typeof errores !== "undefined" && errores.length) { %>
+
+        <div style="color:red;">
+
+            <p>Por favor, corrige los siguientes errores:</p>
+            <ul>
+                <%  
+                errores.forEach (e => { 
+                %>
+                    <li><%= e %></li>
+                <% }) %>
+            </ul>
+
+        </div>
+
+        <% } %>
+
         <label>Nombre del evento:
             <input type="text" name="nombre" value="<%= nombre || '' %>" required/>
         </label>
@@ -33,7 +51,7 @@
         <label>Intereses
             <input type="checkbox" name="intereses" value="musica"
             <%= (intereses || []).includes('musica') ? 'checked' : '' %> /> Música
-            <input type="checkbox" name="intereses" value="deporte")
+            <input type="checkbox" name="intereses" value="deporte"
             <%= (intereses || []).includes('deporte') ? 'checked' : '' %> /> Deporte
             <input type="checkbox" name="intereses" value="tecnologia"
             <%= (intereses || []).includes('tecnologia') ? 'checked' : '' %> /> Tecnología

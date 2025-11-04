@@ -24,13 +24,13 @@
 
     <h2>Intereses seleccionados:</h2>
     <ul>
-        <% (intereses && intereses.length) { %>
-            <% intereses.forEach(i => %>
-                <li><%= i %></li>
-            <% ); %>
-        <% } else { %>
-            <li>No se seleccionaron intereses.</li>
-        <% } %>
+     <% if (intereses && intereses.length) { %>
+    <% intereses.forEach(i => { %>
+      <li><%= i %></li>
+    <% }) %>
+     <% } else { %>
+    <li>No se seleccionaron intereses.</li>
+    <% } %>
     </ul>
 
 </body>
